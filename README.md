@@ -73,9 +73,11 @@ Puedes probarlas en http://localhost:8080/swagger-ui/index.html si clonas el rep
   - Datos de creación (en el cuerpo de la solicitud):
     ```json
     {
-      "titulo": "Nuevo Tópico",
-      "contenido": "Este es el contenido del tópico"
-    }
+  "titulo": "¿Cómo funciona Git hub?",
+  "mensaje": "Quiero entender cómo actualizar mi repositorio de Git hub.",
+  "autor": 1,
+  "curso": 3
+}
     ```
 - **PUT /topics/{id}**: 
   - Actualiza un tópico existente por ID.
