@@ -34,18 +34,14 @@ public class TopicoService {
             throw new IllegalArgumentException("El tópico ya existe con el mismo título y mensaje.");
         }
 
-        System.out.println("datos del autor "+datos.autor()+" y del curso"+datos.curso());
         // Buscar entidades relacionadas
         Usuario autor = usuarioRepository.findById(datos.autor())
                 .orElseThrow(() -> new IllegalArgumentException("Autor no encontrado."));
-        System.out.println("se encontro autor" + autor);
-        Curso curso = cursoRepository.findById(datos.curso())
+         Curso curso = cursoRepository.findById(datos.curso())
                 .orElseThrow(() -> new IllegalArgumentException("Curso no encontrado."));
 
-        System.out.println("se encontro curso"+curso);
-        // Crear y guardar el tópico
+         // Crear y guardar el tópico
         Topico topico = new Topico(datos.titulo(), datos.mensaje(), autor, curso);
-        System.out.println("topico que se va a guardar"+topico);
         topicoRepository.save(topico);
     }
 
